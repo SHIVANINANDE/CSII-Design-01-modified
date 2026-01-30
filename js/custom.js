@@ -106,7 +106,7 @@ Message: ${message}
         try {
             const authRes = await fetch('https://tubasmartoffice.com/smart-office/rest/auth/authenticateUser', {
                 method: 'POST',
-                headers: {'Content-Type': 'application/json'},
+                headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
                     username: 'BUGU',
                     password: 'BUGU@1234',
@@ -137,7 +137,7 @@ Message: ${message}
             alert('Message Sent Successfully. Team Will get in touch shortly');
             const modalEl = document.querySelector('#callback');
             const modal = bootstrap.Modal.getInstance(modalEl);
-            if(modal != null){
+            if (modal != null) {
                 modal.hide();
             }
             location.reload();
@@ -156,7 +156,7 @@ Message: ${message}
 });
 
 
-function sendEnquiry(){
+function sendEnquiry() {
     console.log('ok')
 }
 

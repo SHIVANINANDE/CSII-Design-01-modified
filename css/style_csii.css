@@ -1636,60 +1636,104 @@ h2,
 
 /* --- Modern Footer --- */
 footer.footer {
-  background-color: var(--secondary-color);
+  background-color: #0f172a;
+  /* Slate 900 for premium dark look */
   color: #94a3b8;
-  /* Slate-400 */
   padding-top: 4rem;
   margin-top: 0 !important;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .call-of-action {
-  background: var(--primary-color) !important;
+  background: linear-gradient(135deg, #EF4444 0%, #DC2626 100%);
   border-radius: var(--radius-std);
-  box-shadow: var(--shadow-xl);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
   padding: 3rem 2rem;
   position: relative;
   z-index: 10;
   margin-bottom: -3rem !important;
-  /* Overlap effect */
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Ensure footer headings are legible on dark */
 .footer .f-heading {
   color: #fff !important;
+  font-size: 0.9rem;
   font-weight: 700;
-  letter-spacing: 0.5px;
+  letter-spacing: 1px;
   margin-bottom: 1.5rem;
+  opacity: 0.9;
 }
 
-.footer a {
-  color: #94a3b8 !important;
-  text-decoration: none;
-  transition: all 0.2s;
-}
-
-.footer a:hover {
-  color: var(--accent-light) !important;
-  padding-left: 5px;
-}
-
-/* Social Icons */
-.social-link li a i {
+.footer ul li a {
   color: #cbd5e1 !important;
-  font-size: 1.5rem;
+  /* Slate 300 */
+  text-decoration: none;
+  transition: all 0.2s ease;
+  display: inline-block;
 }
 
-.social-link li a:hover i {
-  color: white !important;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+.footer ul li a:hover {
+  color: #EF4444 !important;
+  /* Brand Red */
+  transform: translateX(4px);
+}
+
+.footer .font-size-sm {
+  font-size: 0.85rem !important;
+}
+
+/* Global Presence Flags */
+.footer img {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+  transition: transform 0.2s;
+}
+
+.footer img:hover {
   transform: scale(1.1);
 }
 
+/* Social Icons */
+.social-link a {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+  transition: all 0.3s;
+}
+
+.social-link a:hover {
+  background: #EF4444;
+  color: #fff !important;
+  transform: translateY(-3px);
+}
+
+.social-link a i {
+  font-size: 1.1rem;
+}
+
 /* Bottom Footer */
-.bg-grey {
-  background-color: var(--primary-color) !important;
-  /* Darker than grey */
+.bg-darker {
+  background-color: #020617 !important;
+  /* Slate 950 */
   border-top: 1px solid rgba(255, 255, 255, 0.05);
   color: #64748b;
+}
+
+/* Utility: Hover Lift */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Rounded Badges */
+.badge-soft-danger {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: #EF4444;
 }
