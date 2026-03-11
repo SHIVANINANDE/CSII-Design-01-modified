@@ -568,7 +568,7 @@
   <!-- Smart Payroll & TUBA Biometric Launch Modal -->
   <div class="modal fade" id="smartPayrollLaunchModal" tabindex="-1" aria-labelledby="spLaunchLabel" aria-hidden="true"
     style="backdrop-filter: blur(10px);">
-    <div class="modal-dialog modal-dialog-centered modal-xl">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
       <div class="modal-content border-0 rounded-4 overflow-hidden shadow-lg"
         style="background: #ffffff; color: #0A1628;">
 
@@ -584,11 +584,10 @@
         <div class="row g-0 position-relative z-1 align-items-stretch">
 
           <!-- Left Side: Smart Payroll -->
-          <div class="col-lg-6 p-4 p-md-5 d-flex flex-column justify-content-center"
-            style="border-right: 1px solid rgba(0,0,0,0.05);">
+          <div class="col-12 p-4 p-md-5 d-flex flex-column justify-content-center" id="spSlide">
             <div class="text-center mb-4">
               <h5 class="fw-bold d-flex align-items-center justify-content-center gap-2 mb-2"
-                style="font-family: 'Syne', sans-serif; font-size: 1.8rem;">
+                style="font-family: 'Comfortaa', sans-serif; font-size: 1.8rem;">
                 Smart<span style="color: #0A9382;">Payroll</span>
                 <span class="badge rounded-pill ms-1"
                   style="background: linear-gradient(135deg, #1A56FF, #4C7AFF); font-size: 0.7rem; font-weight: 600; padding: 4px 10px; box-shadow: 0 0 10px rgba(26,86,255,0.3);">🚀
@@ -606,7 +605,7 @@
             </p>
 
             <div class="d-flex justify-content-center gap-3 mb-5">
-              <a href="https://csii.in/hrms-lite/#/account/login" target="_blank"
+              <a href="sp-login.html"
                 class="btn text-white px-4 py-3 rounded-pill fw-bold"
                 style="background: linear-gradient(135deg, #1A56FF 0%, #4C7AFF 100%); box-shadow: 0 4px 15px rgba(26,86,255,0.3); font-size: 0.9rem; transition: transform 0.2s;"
                 onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">Get
@@ -622,7 +621,7 @@
               <div class="col-6">
                 <div class="d-flex flex-column p-4 rounded-4 h-100 hover-lift bg-white shadow-sm"
                   style="border: 1px solid rgba(10,147,130,0.1); border-top: 3px solid #0A9382;">
-                  <div class="fw-bold mb-2" style="color: #0A9382; font-size: 1.4rem; font-family: 'Syne', sans-serif;">
+                  <div class="fw-bold mb-2" style="color: #0A9382; font-size: 1.4rem; font-family: 'Comfortaa', sans-serif;">
                     100%</div>
                   <div style="font-size: 0.85rem; color: #4B5563; line-height: 1.4;">Encrypted Cloud Data</div>
                 </div>
@@ -630,7 +629,7 @@
               <div class="col-6">
                 <div class="d-flex flex-column p-4 rounded-4 h-100 hover-lift bg-white shadow-sm"
                   style="border: 1px solid rgba(10,147,130,0.1); border-top: 3px solid #1A56FF;">
-                  <div class="fw-bold mb-2" style="color: #1A56FF; font-size: 1.4rem; font-family: 'Syne', sans-serif;">
+                  <div class="fw-bold mb-2" style="color: #1A56FF; font-size: 1.4rem; font-family: 'Comfortaa', sans-serif;">
                     &lt;5m</div>
                   <div style="font-size: 0.85rem; color: #4B5563; line-height: 1.4;">Onboarding Setup Time</div>
                 </div>
@@ -639,11 +638,11 @@
           </div>
 
           <!-- Right Side: TUBA Biometric -->
-          <div class="col-lg-6 p-4 p-md-5 d-flex flex-column justify-content-center"
+          <div class="col-12 p-4 p-md-5 d-flex flex-column justify-content-center d-none" id="tbSlide"
             style="background: rgba(250,251,253,0.5);">
             <div class="text-center mb-4">
               <h5 class="fw-bold d-flex align-items-center justify-content-center gap-2 mb-2"
-                style="font-family: 'Syne', sans-serif; font-size: 1.8rem;">
+                style="font-family: 'Comfortaa', sans-serif; font-size: 1.8rem;">
                 TUBA<span style="color: #EF4444;">Biometric</span>
                 <span class="badge rounded-pill ms-1"
                   style="background: linear-gradient(135deg, #EF4444, #B91C1C); font-size: 0.7rem; font-weight: 600; padding: 4px 10px; box-shadow: 0 0 10px rgba(239,68,68,0.3);">⭐
@@ -727,6 +726,16 @@
         if (document.getElementById('smartPayrollLaunchModal')) {
           var spModal = new bootstrap.Modal(document.getElementById('smartPayrollLaunchModal'));
           spModal.show();
+
+          // Toggle slides every 1.5s
+          setInterval(function() {
+            var spContent = document.getElementById('spSlide');
+            var tbContent = document.getElementById('tbSlide');
+            if (spContent && tbContent) {
+              spContent.classList.toggle('d-none');
+              tbContent.classList.toggle('d-none');
+            }
+          }, 1500);
         }
       }, 1500); // 1.5s delay for modern UX
     });
